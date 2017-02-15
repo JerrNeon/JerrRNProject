@@ -1,6 +1,8 @@
 /**
  * Created by Administrator on 2017/2/14.
  */
+'use strict';
+
 import React, {Component, PropTypes} from 'react';
 import {
     StyleSheet,
