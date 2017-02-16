@@ -12,9 +12,7 @@ import {
     TouchableOpacity,
     Dimensions,
 }from 'react-native';
-
-const deviceWidthDp = Dimensions.get('window').width;
-const deviceHeightDp = Dimensions.get('window').height;
+import theme from './util/theme';
 
 export default class CommonBackView extends Component {
 
@@ -52,7 +50,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#6495ED',
         padding: 10,
-        width: deviceWidthDp,
+        width: theme.screenWidth,
     },
     left: {
         flexDirection: 'row',

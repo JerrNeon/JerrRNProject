@@ -15,9 +15,7 @@ import {
     Dimensions,
 } from 'react-native';
 import CommonBackView from './common_back'
-
-const deviceWidthDp = Dimensions.get('window').width;
-const deviceHeightDp = Dimensions.get('window').height;
+import theme from './util/theme';
 
 export default class DrawerLayoutDemo extends Component {
 
@@ -60,7 +58,7 @@ export default class DrawerLayoutDemo extends Component {
             </View>
         );
         return (
-            <View style={{height: deviceHeightDp}}>
+            <View style={{height: theme.screenHeight}}>
                 <CommonBackView title={'侧滑'} navigator={navigator}/>
                 <DrawerLayoutAndroid
                     ref={(drawer) => {

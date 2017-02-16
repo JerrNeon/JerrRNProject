@@ -9,17 +9,11 @@ import {
     StyleSheet,
     Text,
     View,
-    TouchableOpacity,
 } from 'react-native';
 import Banner from 'react-native-banner';
 import CommonBackView from './common_back';
 
 export default class BannerTest extends Component {
-
-    // static propTypes = {
-    //     navigator: React.PropTypes.object.isRequired,
-    //     route: React.PropTypes.object.isRequired
-    // }
 
     // 构造
     constructor(props) {
@@ -57,7 +51,7 @@ export default class BannerTest extends Component {
         const {navigator} = this.props;
         return (
             <View style={[styles.container, this.iosMarginTop]}>
-                <CommonBackView title={'Banner'} navigator={navigator}/>
+                <CommonBackView title={'banner'} navigator={navigator}/>
                 <Banner
                     banners={this.banners}
                     defaultIndex={this.defaultIndex}
@@ -80,17 +74,11 @@ export default class BannerTest extends Component {
         this.defaultIndex = state.index;
     }
 
-    _back() {
-        const {navigator} = this.props;
-        if (navigator) {
-            navigator.pop();
-        }
-    }
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         backgroundColor: '#F5FCFF',
+        flex: 1,
     },
 });

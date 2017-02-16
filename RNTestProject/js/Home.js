@@ -10,6 +10,7 @@ import BaseComponent from './ComponentTest';
 import BannerTest from './BannerTest'
 import DrawerLayout from './DrawerLayoutDemo';
 import NetRequestTest from './NetRequestTest';
+import ListViewTest from './ListViewTest';
 
 export default class Home extends Component {
 
@@ -31,6 +32,8 @@ export default class Home extends Component {
                 <Button title={'侧滑'} onPress={()=>{this._drawerLayout(navigator);}}/>
                 <View style={styles.line}/>
                 <Button title={'网络请求'} onPress={()=>{this._netRequestTest(navigator);}}/>
+                <View style={styles.line}/>
+                <Button title={'ListView'} onPress={()=>{this._listView(navigator);}}/>
                 <View style={styles.line}/>
             </View>
         );
@@ -68,6 +71,15 @@ export default class Home extends Component {
             navigator.push({
                 name: 'NetRequestTest',
                 component: NetRequestTest
+            })
+        }
+    }
+
+    _listView(navigator) {
+        if (navigator) {
+            navigator.push({
+                name: 'ListViewTest',
+                component: ListViewTest,
             })
         }
     }

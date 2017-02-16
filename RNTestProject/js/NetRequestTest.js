@@ -13,8 +13,7 @@ import {
     Dimensions,
 } from 'react-native'
 import CommonBackView from './common_back';
-
-const deviceHeightDp = Dimensions.get('window').height;
+import theme from './util/theme';
 
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
@@ -26,7 +25,7 @@ export default class NetRequestTest extends Component {
         // 初始状态
         this.state = {
             movies: null,
-            i: 0
+            i: 0,
         };
         setInterval(() => {
             this.setState({i: (this.state.i + 1)});
@@ -43,7 +42,7 @@ export default class NetRequestTest extends Component {
 
     fetchData() {
         fetch(REQUEST_URL, {
-            method: 'GET'
+            method: 'GET',
         }).then((response) => response.json())
             .then((responseData) => {
                 this.setState({
@@ -91,7 +90,7 @@ export default class NetRequestTest extends Component {
 const styles = StyleSheet.create({
     all: {
         flexDirection: 'column',
-        height: deviceHeightDp,
+        height: theme.screenHeight,
     },
     container: {
         flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', backgroundColor: '#F5FCFF'
